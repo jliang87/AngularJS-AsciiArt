@@ -11,4 +11,6 @@ Feel free to take a week to work on it. The goal is not to finish every piece of
 
 Also, consider this test project as if you're part of the team so please don't hesitate to ask for any clarification!
 
+Design references (including PNG): https://www.dropbox.com/sh/381032v5egt6vwf/Vke6DSqnsB
+
 Good luck!
