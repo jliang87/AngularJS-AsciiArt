@@ -6,7 +6,7 @@ When I saw the project description, my first reaction was to take up the challen
 Currently, the app allows the user to type in HTML (ex. &lt;span class='az-spinner'&gt; CRAZY &lt;/span&gt;) in a textbox and displays the result with CSS effects in a table cell. 
 The texts are persisted to the database by using AngularJS's $resource.
 
-Screenshot: https://dl.dropboxusercontent.com/u/26084922/ascssiii.png
+Screenshot of the app: https://dl.dropboxusercontent.com/u/26084922/ascssiii.png
 
 I've spent the majority of the time learning about AngularJS and tweaking the UI. One major difficulty was the displaying of the texts in a table cell with 'ng-repeat', where each row in the table can only have three cells/texts. 
 And then there's the problem of generating a table for the existing texts in the DB when the DOM loads: query() for $resource in the controller returns results only when the user interacts with the app, not when the app loads, which I think is because of this - http://stackoverflow.com/questions/12956380/angularjs-get-data-immediatelly-after-call-to-query. 
