@@ -1,7 +1,7 @@
 Summary
 ========
 
-When I saw the project description, my first reaction was to take up the challenge to learn AngularJS and build my first AngularJS app, since I can learn something new and 'in', and it seems more fun. 
+When I saw the project description, my first reaction was to take up the challenge to learn AngularJS and build my first AngularJS app, since I want to learn something new and 'in', and it seems more fun. 
 
 Currently, the app allows the user to type in HTML (ex. &lt;span class='az-spinner'&gt; CRAZY &lt;/span&gt;) in a textbox and displays the result in a table cell. 
 The texts are persisted to the database by using AngularJS's $resource.
