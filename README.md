@@ -3,8 +3,10 @@ Summary
 
 When I saw the project description, my first reaction was to take up the challenge to learn the basics of AngularJS in a week to build my first AngularJS app, since I can learn something new and 'in' at the moment, and it seems more fun. 
 
-Currently, the app allows the user to type in HTML (ex. &lt; span class='az-spinner'&gt; CRAZY &lt;/span&gt;) in a textbox and displays the result in a table cell. 
-asdsad
+Currently, the app allows the user to type in HTML (ex. &lt;span class='az-spinner'&gt; CRAZY &lt;/span&gt;) in a textbox and displays the result in a table cell. 
+The texts are persisted to the database by using AngularJS's $resource.
+
+The 
 
 
 
