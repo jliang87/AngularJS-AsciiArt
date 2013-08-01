@@ -6,7 +6,7 @@ When I saw the project description, my first reaction was to take up the challen
 Currently, the app allows the user to type in HTML (ex. &lt;span class='az-spinner'&gt; CRAZY &lt;/span&gt;) in a textbox and displays the result with CSS effects in a table cell. 
 The texts are persisted to the database by using AngularJS's $resource.
 
-I've spent the majority of the time learning about AngularJS and tweaking the UI. One major difficulty was the displaying of the texts in a table cell, where each row in the table can only have three texts. 
+I've spent the majority of the time learning about AngularJS and tweaking the UI. One major difficulty was the displaying of the texts in a table cell, where each row in the table can only have three cell/texts. 
 And then there's the problem of generating a table for the existing texts in the DB when the DOM loads: query() for $resource in the controller returns results only when the user interacts with the app, not when the app loads, which I think is because of this - http://stackoverflow.com/questions/12956380/angularjs-get-data-immediatelly-after-call-to-query). 
 After googling and unable to find any more information regarding this problem, I came up with a hack by including back JQuery in app and use $.get through JSON to obtain the texts in the DB, only to learn that $.get is asynchronous and won't work, and $.ajax with 'async=false' works.
 
