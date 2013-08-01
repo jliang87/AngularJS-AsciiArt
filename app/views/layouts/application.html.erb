@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="ascii">
+<!-- since we've given the application a module name; so this will use the correct module -->
+<head> 
+  <title>ascii</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="bg">
+<div class='container'>
+	<%= yield %>
+</div>
+ 
+</body>
+</html>

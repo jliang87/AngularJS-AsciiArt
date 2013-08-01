@@ -1,0 +1,25 @@
+<div class="row">
+	<div style="text-align:center">
+		<h1 style="margin-left: 10px">ascii</h1>
+		<h4 style="margin-left: 10px">type in text with html's!</h4>
+		<div ng-controller="AsciiCtrl">
+			<form ng-submit="addEntry()" style="margin-left: 85px">
+				<textarea ng-model='newEntry.text' rows="5" cols="50" class="round"></textarea>
+				<input type="submit" value="Add" class="btn btn-large btn-inverse" style="margin-bottom:10px">
+			</form>
+			<table ng-init="doRows()">
+				<tr ng-repeat="row in rows">
+					<td ng-repeat="entry in row">
+						<div style="text-align: center;">
+							<div ng-bind-html-unsafe="entry.text"></div>
+						</div>
+          				<i class="icon-remove icon-black icon-large" style="top:10px; left:10px; position:absolute;" ng-click="deleteEntry($parent.$index, $index)"></i>
+					</td>
+				</tr>
+			</table>
+		</div> 
+	</div> 
+</div>
+
+
+<!-- {} or {{}} for expression like Django-->
