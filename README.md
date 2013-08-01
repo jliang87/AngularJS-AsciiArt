@@ -3,7 +3,7 @@ Summary
 
 When I saw the project description, my first reaction was to take up the challenge to learn AngularJS and build my first AngularJS app, since I want to learn something new and something that is used by Axiom Zen, and it seems more fun. 
 
-Currently, the app allows the user to type in HTML (ex. &lt;span class='az-spinner'&gt; CRAZY &lt;/span&gt;) in a textbox and displays the result with CSS effects in a table cell. 
+Currently, the app allows the user to type in HTML (ex. &lt;span class='az-spinner'&gt; CRAZY &lt;/span&gt;) in a textbox and displays the result with HTML/CSS effects in a table cell. 
 The texts are persisted to the database by using AngularJS's $resource. When a cell is deleted, the text it contains is also erased from the DB. 
 
 Screenshot of the app: https://dl.dropboxusercontent.com/u/26084922/ascssiii.png
