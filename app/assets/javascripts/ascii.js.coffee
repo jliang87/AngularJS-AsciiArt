@@ -10,6 +10,7 @@ app.factory "Entry", ($resource) ->
 	items =[]
 	rows = []
 	$scope.rows = rows
+	$scope.should = false
 	
 	$scope.addEntry = ->
 		if $scope.newEntry.text
@@ -56,7 +57,6 @@ app.factory "Entry", ($resource) ->
 
 
 
-
 # app.run -> 
 # 	$.get "/entries/", ((data) ->
 # 		alert data
@@ -64,6 +64,16 @@ app.factory "Entry", ($resource) ->
 # *** run before controller, so no $scope ***		
 
 
+
+#simple jQuery effect instead of ngAnimate for it is only available in AngularJS 1.1.5, which is unstable and the 
+#$scope.rows[parentIndex].splice(index, 1)) in $scope.deleteEntry doesn't work in 1.1.5
+$ ->
+	$("#input").click (e)->
+		e.stopPropagation()
+		$("#preview").slideDown()
+
+	$('html').click ->
+		$("#preview").slideUp()
 
 
 

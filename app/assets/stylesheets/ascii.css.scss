@@ -9,11 +9,12 @@ $gridGutterWidth:-20px;
 
 table {
     border-collapse: separate;
-    border-spacing: 10px;
+    border-spacing: 10px;   
 }
 
 textarea{
    resize: none; 
+   background:transparent;
 }
 
 td{
@@ -44,9 +45,7 @@ td{
   }
 }
 .az-spinner {
-  margin: 2em;
   display: inline-block;
-  float: left;
   -webkit-animation: spinForever 0.285s infinite linear;
   font-size: 15px;
   width: 10px;

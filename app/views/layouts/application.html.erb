@@ -2,15 +2,15 @@
 <html ng-app="ascii">
 <!-- since we've given the application a module name; so this will use the correct module -->
 <head> 
-  <title>ascii</title>
+  <title>ascssiii</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 </head>
-<body class="bg">
+<body class="bg" ng-controller="AsciiCtrl">
 <div class='container'>
 	<%= yield %>
 </div>
- 
 </body>
 </html>
