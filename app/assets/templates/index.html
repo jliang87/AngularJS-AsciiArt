@@ -1,0 +1,31 @@
+<form ng-submit="addEntry()" style="margin-top: 5px">
+	<span style="position: relative">
+	 <textarea id="input" ng-model='newEntry.text' rows="5" cols="50" class="round" autofocus></textarea> 
+	 <i class="icon-long-arrow-left icon-large" style="position: absolute; top:-40px; right:-80px"><b> textbox</b></i>
+	</span>
+	<div id="preview" style="display:none; margin-left: 155px; position: relative">
+		<table>
+			<td ng-bind-html-unsafe="newEntry.text"></td>
+		</table>
+		<i class="icon-reply" style="position: absolute; top:40px; right:85px"><b> preview</b></i>
+	</div>
+	<div>
+		<input type="submit" value="Add" class="btn btn-large btn-inverse" style="margin-bottom:10px; margin-left: 5px">
+	</div>
+</form>
+
+<table ng-init="doRows()">
+	<tr ng-repeat="row in rows">
+		<td ng-repeat="entry in row">
+			<div style="text-align: center;">
+				<div ng-bind-html-unsafe="entry.text"></div>
+			</div>
+			<i class="icon-remove icon-large" style="top:10px; left:10px; position:absolute; cursor: pointer" ng-click="deleteEntry($parent.$index, $index)"></i>
+			<i class="icon-edit icon-large" style="top:10px; right:10px; position:absolute; cursor: pointer" ng-click="editEntry($parent.$index, $index)"></i>
+		</td>
+	</tr>
+</table>
+
+
+
+<!-- {} or {{}} for expression like Django-->

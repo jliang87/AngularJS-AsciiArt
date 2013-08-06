@@ -5,7 +5,7 @@ class EntriesController < ApplicationController
     respond_with Entry.all
   end
 
-  def show
+  def edit
     respond_with Entry.find(params[:id])
   end
 

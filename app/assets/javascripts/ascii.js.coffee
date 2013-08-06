@@ -1,16 +1,11 @@
-app = angular.module("ascii", ["ngResource"]) # create a module and use ngResource as a dependency for the module so that angular-resource can be used
-
-app.factory "Entry", ($resource) ->
-  $resource("/entries/:id", {id: "@id"}) # returns a object that allow us to communicate with the REST api; the first argument is the url to the api, the second argument is for the default parameters, the third argument allows actions to be called on the api  
-  # @id is the current object's id
-
-@AsciiCtrl = ($scope, Entry) ->
+angular.module('ascii').controller 'AsciiIndexController'
+, ['$log', '$scope', '$location', '$resource', 'Entry', 'Selection' 
+, ($log, $scope, $location, $resource, Entry, Selection) ->
 	# $scope.rows = Entry.query() #json api by triggering the index action
 
 	items =[]
 	rows = []
 	$scope.rows = rows
-	$scope.should = false
 	
 	$scope.addEntry = ->
 		if $scope.newEntry.text
@@ -26,10 +21,15 @@ app.factory "Entry", ($resource) ->
 				$scope.rows.push []
 				$scope.rows[0].push entry	
 
+
+	$scope.editEntry = (parentIndex, index) -> 
+		Selection.instance = $scope.rows[parentIndex][index]
+		$location.path "/entries/#{$scope.rows[parentIndex][index].id}/edit"
+
 			
 	$scope.deleteEntry = (parentIndex, index) -> 
-		Entry.delete($scope.rows[parentIndex][index], ->
-			$scope.rows[parentIndex].splice(index, 1))
+		Entry.delete $scope.rows[parentIndex][index]
+		$scope.rows[parentIndex].splice(index, 1)
 
 
 	$scope.doRows = ->
@@ -54,28 +54,7 @@ app.factory "Entry", ($resource) ->
 			rows.push []  if i % 3 is 0
 			rows[rows.length - 1].push items[i]
 			i++
-
-
-
-# app.run -> 
-# 	$.get "/entries/", ((data) ->
-# 		alert data
-# 	), "json"
-# *** run before controller, so no $scope ***		
-
-
-
-#simple jQuery effect instead of ngAnimate for it is only available in AngularJS 1.1.5, which is unstable and the 
-#$scope.rows[parentIndex].splice(index, 1)) in $scope.deleteEntry doesn't work in 1.1.5
-$ ->
-	$("#input").click (e)->
-		e.stopPropagation()
-		$("#preview").slideDown()
-
-	$('html').click ->
-		$("#preview").slideUp()
-
-
+]
 
 
 

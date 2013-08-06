@@ -1,0 +1,16 @@
+angular.module('ascii').config ['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) ->
+
+  $routeProvider
+  .when '/',
+    templateUrl: '<%= asset_path("index.html") %>',
+    controller: 'AsciiIndexController'
+
+  .when '/entries/:id/edit',
+    templateUrl: '<%= asset_path("edit.html") %>'
+    controller: 'EntryEditController'
+
+  .otherwise redirectTo: '/'
+
+  # enabling html5Mode
+  $locationProvider.html5Mode true
+]

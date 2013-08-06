@@ -2,6 +2,8 @@ $gridGutterWidth:-20px;
 
 @import "bootstrap";
 
+$TRANSITION_EASE_LINEAR: linear;
+
 .round {
    -moz-border-radius: 6px;
    border-radius: 6px;
@@ -51,5 +53,15 @@ td{
   height: 10px;
   color: #55A;
   line-height: 0.85;
+}
+
+
+.content-enter{
+  opacity:0;
+  @include transition(opacity .3s .1s $TRANSITION_EASE_LINEAR);
+}
+
+.content-enter.content-enter-active{
+  opacity:1;
 }
 
