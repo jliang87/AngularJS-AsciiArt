@@ -1,11 +1,11 @@
 <form ng-submit="updateEntry()" style="margin-top: 5px">
 	<span style="position: relative">
-	 <textarea ng-model='entry.text' rows="5" cols="50" class="round" autofocus></textarea> 
+	 <textarea ng-model='entry' rows="5" cols="50" class="round" autofocus></textarea> 
 	 <i class="icon-long-arrow-left icon-large" style="position: absolute; top:-40px; right:-80px"><b> textbox</b></i>
 	</span>
 	<div style="margin-left: 155px; position: relative">
 		<table>
-			<td ng-bind-html-unsafe="entry.text"></td>
+			<td ng-bind-html-unsafe="entry"></td>
 		</table>
 		<i class="icon-reply" style="position: absolute; top:40px; right:85px"><b> preview</b></i>
 	</div>
