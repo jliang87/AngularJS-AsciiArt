@@ -1,8 +1,6 @@
 angular.module('ascii').controller 'AsciiIndexController'
 , ['$log', '$scope', '$location', '$resource', 'Entry', 'Selection' 
 , ($log, $scope, $location, $resource, Entry, Selection) ->
-	# $scope.rows = Entry.query() #json api by triggering the index action
-
 	items =[]
 	rows = []
 	$scope.rows = rows
@@ -41,19 +39,21 @@ angular.module('ascii').controller 'AsciiIndexController'
 		# ), "json"
 		# *** won't work due to not synchronous ***
 
-		$.ajax
-		    type: "GET"
-		    url: "/entries/"
-		    dataType: "json"
-		    async: false
-		    success: (data) ->
-		    	items= data
+		# $.ajax
+		#     type: "GET"
+		#     url: "/entries/"
+		#     dataType: "json"
+		#     async: false
+		#     success: (data) ->
+		#     	items= data
 
-		i = 0
-		while i < items.length
-			rows.push []  if i % 3 is 0
-			rows[rows.length - 1].push items[i]
-			i++
+		items = Entry.query(->
+			i = 0
+			while i < items.length
+				rows.push []  if i % 3 is 0
+				rows[rows.length - 1].push items[i]
+				i++
+		) #json api by triggering the index action
 ]
 
 
