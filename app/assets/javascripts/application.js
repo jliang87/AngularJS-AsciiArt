@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require unstable/angular
 //= require unstable/angular-resource
+//= require ng-rails-csrf
 //= require module
 //= require jqueryStuff
 //= require_tree .
