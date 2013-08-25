@@ -1,2 +1,3 @@
+AngularJS CRUD SPA on Rails
 
-https://dl.dropboxusercontent.com/u/26084922/ascssiii2.png
+Screenshot: https://dl.dropboxusercontent.com/u/26084922/ascssiii2.png
